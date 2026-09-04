@@ -1,0 +1,100 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Light surfaces */
+  --color-page: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-2: #f1f5f9;
+  --color-line: #e2e8f0;
+  --color-line-soft: #eef2f6;
+
+  /* Text — heading, body and secondary */
+  --color-head: #0d1726;
+  --color-body: #3a4759;
+  --color-muted: #64748b;
+
+  /* Brand blue, dark enough to pass AA on white */
+  --color-brand: #1d4ed8;
+  --color-brand-bright: #2563eb;
+  --color-brand-deep: #172f7d;
+  --color-brand-tint: #eff4ff;
+
+  /* Single dark band used by the footer and CTA panel */
+  --color-deep: #0c1a30;
+  --color-deep-2: #142440;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: var(--font-space), var(--font-sans);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: var(--color-page);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    color: var(--color-head);
+    font-family: var(--font-display);
+    letter-spacing: -0.022em;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: var(--color-brand);
+    color: #fff;
+  }
+  /* Inside the dark band, invert heading colour. */
+  .on-dark h1, .on-dark h2, .on-dark h3, .on-dark h4 { color: #fff; }
+}
+
+@utility container-x {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 78rem;
+  padding-inline: 1.25rem;
+  @media (width >= 48rem) { padding-inline: 2rem; }
+}
+
+/* Soft page-top wash behind hero sections. */
+@utility wash {
+  background-image:
+    radial-gradient(52rem 26rem at 78% -12%, #e0ecff 0%, transparent 62%),
+    radial-gradient(38rem 22rem at 8% -6%, #f2f0ff 0%, transparent 60%);
+}
+
+@utility card-shadow {
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.04), 0 8px 24px -12px rgb(15 23 42 / 0.12);
+}
+
+@utility card-shadow-lg {
+  box-shadow: 0 2px 4px rgb(15 23 42 / 0.04), 0 24px 48px -20px rgb(15 23 42 / 0.18);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+@utility animate-rise {
+  animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
