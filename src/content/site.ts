@@ -6,9 +6,9 @@ export const site = {
   founded: 2019,
 
   // TODO: replace every value in this block before launch.
-  url: 'https://skyrocketinfosystem.com',
-  email: 'contact@skyrocketinfosystem.com',
-  careersEmail: 'careers@skyrocketinfosystem.com',
+  url: 'https://skyrocketinfosystem.in',
+  email: 'skyrocketinfosystem@gmail.com',
+  careersEmail: 'skyrocketinfosystem+careers@gmail.com',
   phone: '+65 6812 4400',
   legalEntity: 'Skyrocket InfoSystem Pte. Ltd.',
   uen: '201914728K',
