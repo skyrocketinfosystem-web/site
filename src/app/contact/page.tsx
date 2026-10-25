@@ -20,8 +20,8 @@ export default function ContactPage() {
       />
 
       <Section className="pt-0 md:pt-0">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
-          <ContactForm />
+        <div className="">
+          {/*<ContactForm />*/}
 
           <aside className="space-y-6">
             <div className="rounded-xl border border-line bg-white p-7 card-shadow">
