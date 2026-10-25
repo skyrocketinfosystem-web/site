@@ -80,17 +80,7 @@ export function ContactForm() {
       {/* Honeypot: bots fill this, humans never see it. */}
       <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
 
-      /* {!ACCESS_KEY ? (
-        <p className="mb-7 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-          <strong className="font-semibold">Setup required:</strong> add{' '}
-          <code className="rounded bg-amber-100 px-1">NEXT_PUBLIC_WEB3FORMS_KEY</code> to your environment to enable
-          sending. Until then, email{' '}
-          <a href={`mailto:${site.email}`} className="underline">
-            {site.email}
-          </a>
-          .
-        </p>
-      ) : null}*/
+    
 
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Full name" name="name" required autoComplete="name" />
